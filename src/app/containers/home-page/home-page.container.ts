@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NewsService } from '../../services/news.service';
+import { Observable } from 'rxjs';
+import { Article } from '../../models';
 
 @Component({
   selector: 'home',
@@ -6,29 +9,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.container.scss']
 })
 export class HomePageContainer {
-  public ladingDataTableColumns: Array<string> = [
-    'quoteNumber', 'branchCode', 'customerNumber', 'customerName', 'billToState'
-  ];
+  public newsSourceId: string = 'the-hindu';
+  public articles: Array<Article> = [];
 
-  public ladingDataRows = [{
-    'quoteNumber': '1233',
-    'branchCode' : '23',
-    'customerName': 'Sam Josh',
-    'customerNumber': 440,
-  }, {
-    'quoteNumber': '12303',
-    'branchCode' : '23',
-    'customerName': 'Sam Josh',
-    'customerNumber': 445,
-  },{
-    'quoteNumber': '1233',
-    'branchCode' : '23',
-    'customerName': 'Sam Josh',
-    'customerNumber': 4488,
-  }, {
-    'quoteNumber': '1233',
-    'branchCode' : '23',
-    'customerName': 'Sam Josh',
-    'customerNumber': 443,
-  }];
+  constructor(private newsService: NewsService) { }
+
+  ngOnInit() {
+    this.newsService.getNewsData(this.newsSourceId).subscribe(
+      news => {
+        if (news && news.articles) {
+          this.articles = news.articles;
+        }
+      }
+    );
+  }
 }
