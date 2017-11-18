@@ -1,0 +1,25 @@
+@import '../../common/styles/colors.scss';
+@import '../../common/styles/fonts.scss';
+.header-bar {
+  min-width: 1039px;
+  color:$pure-white;
+  background-color: $marine-blue;
+  .search-entry-wrapper {
+    padding-right: 20px;
+    width: 200px;
+  }
+  .inline {
+    display: inline-block;
+  }
+  .fa-icon {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+  .fa-icon.fa-search{
+    margin-left: 10px;
+    cursor: pointer;
+  }
+  h2 {
+    width: auto;
+  }
+}

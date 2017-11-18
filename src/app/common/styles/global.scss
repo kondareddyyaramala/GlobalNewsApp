@@ -1,0 +1,10 @@
+@import './colors.scss';
+.container {
+  width: 1024px;
+  min-width: 1024px;
+  @media (min-width: 1664px) {
+    width: calc(100% - 640px);
+    min-width: calc(100% - 640px);
+  }
+  padding: 0 10px;
+}
