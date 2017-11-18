@@ -1,0 +1,26 @@
+@import '../../common/styles/colors.scss';
+@import '../../common/styles/fonts.scss';
+.search {
+  display: inline-flex;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  .select-country-text {
+    margin-right: 10px;
+    font-family: $ff-avant-garde-bold;
+  }
+  div {
+    margin-left: 5px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .search-button {
+    button {
+      background-color: $moss;
+      color: $pure-white;
+      &:disabled {
+        background-color: $warm-grey;
+      }
+    }
+  }
+}

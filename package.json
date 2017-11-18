@@ -1,6 +1,6 @@
 {
   "name": "global-news-app",
-  "version": "5.0.0",
+  "version": "1.0.0",
   "license": "MIT",
   "scripts": {
     "start": "ng serve",
@@ -25,8 +25,8 @@
     "zone.js": "0.8.18"
   },
   "devDependencies": {
-    "@angular/cdk": "2.0.0-beta.12",
-    "@angular/material": "2.0.0-beta.12",
+    "@angular/cdk": "5.0.0-rc0",
+    "@angular/material": "5.0.0-rc0",
     "@angular/cli": "1.5.2",
     "@angular/compiler-cli": "5.0.0",
     "@angular/platform-server": "5.0.0",

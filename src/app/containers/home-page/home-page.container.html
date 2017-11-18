@@ -1,4 +1,7 @@
 <div class="home-page container">
+  <div>
+    <app-search (loadNewsData) ="loadNewsData($event)"></app-search>
+  </div>
   <div *ngFor="let article of articles">
     <app-article [article] ="article"></app-article>
   </div>

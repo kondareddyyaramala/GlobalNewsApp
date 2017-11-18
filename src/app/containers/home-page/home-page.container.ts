@@ -15,12 +15,20 @@ export class HomePageContainer {
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
-    this.newsService.getNewsData(this.newsSourceId).subscribe(
+    this.loadData();
+  }
+
+  loadData(newsSourceId?){
+    this.newsService.getNewsData(newsSourceId ? newsSourceId : this.newsSourceId).subscribe(
       news => {
         if (news && news.articles) {
           this.articles = news.articles;
         }
       }
     );
+  }
+
+  loadNewsData(newsSourceId: string){
+    this.loadData(newsSourceId);
   }
 }
