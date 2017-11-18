@@ -1,0 +1,2 @@
+# GlobalNewsApp
+Global News App 
