@@ -8,6 +8,9 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "es5",
+    "baseUrl": "./src",
+    "paths":{
+    },
     "typeRoots": [
       "node_modules/@types"
     ],

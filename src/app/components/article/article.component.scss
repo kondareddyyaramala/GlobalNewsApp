@@ -1,5 +1,18 @@
+@import '../../common/styles/colors.scss';
+@import '../../common/styles/fonts.scss';
+
 .article {
-  width: 1000px;
+  max-width: 1000px;
   margin-top: 15px;
   margin-bottom: 15px;
+ .title {
+   font-family: $ff-avant-garde-bold;
+ }
+ .author{
+  font-family: $ff-avant-garde-italic;
+ }
+ .description {
+   font-family: $ff-avant-garde-regular;
+ }
+
 }

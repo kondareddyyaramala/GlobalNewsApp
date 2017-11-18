@@ -1,10 +1,10 @@
 <mat-card class="article">
   <mat-card-header>
-    <mat-card-title> <h3> {{ article?.title }} </h3> </mat-card-title>
-    <mat-card-subtitle>Article by : {{ article?.author }}</mat-card-subtitle>
+    <mat-card-title class="title"> <h3> {{ article?.title }} </h3> </mat-card-title>
+    <mat-card-subtitle class ="author">Article by : {{ article?.author }}</mat-card-subtitle>
   </mat-card-header>
     <img height="500px" mat-card-image src="{{ article?.urlToImage }}" alt="">
-  <mat-card-content>
+  <mat-card-content class="description">
     <h4> {{ article.description }} </h4>
   </mat-card-content>
   <mat-card-actions>
