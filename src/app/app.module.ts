@@ -7,10 +7,19 @@ import { AppContainer } from './containers/app/app.container';
 import { ROUTES } from '../app/routes/routes';
 import { HomePageContainer } from './containers/home-page/home-page.container';
 import { HeaderBarComponent } from './components/header-bar/header-bar.component';
-import { MatCardModule, MatFormFieldModule, MatOptionModule, MatInputModule, MatSelectModule, MatButtonModule } from '@angular/material';
+import {
+  MatCardModule,
+  MatFormFieldModule,
+  MatOptionModule,
+  MatInputModule,
+  MatSelectModule,
+  MatButtonModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
 import { NewsService } from './services/news.service';
 import { ArticleComponent } from './components/article/article.component';
 import { SearchComponent } from './components/search/search.component';
+import { LoadingSpinnerComponent } from './components/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +28,7 @@ import { SearchComponent } from './components/search/search.component';
     HeaderBarComponent,
     ArticleComponent,
     SearchComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,6 +41,7 @@ import { SearchComponent } from './components/search/search.component';
     MatSelectModule,
     BrowserAnimationsModule,
     MatButtonModule,
+    MatProgressSpinnerModule,
     ROUTES
   ],
   providers: [NewsService],

@@ -11,6 +11,8 @@ import { Article } from '../../models';
 export class HomePageContainer {
   public newsSourceId: string = 'the-hindu';
   public articles: Array<Article> = [];
+  public isLoading: boolean = false;
+  public loadingMessage: string = 'Loading...';
 
   constructor(private newsService: NewsService) { }
 
@@ -19,10 +21,12 @@ export class HomePageContainer {
   }
 
   loadData(newsSourceId?){
+    this.isLoading = true;
     this.newsService.getNewsData(newsSourceId ? newsSourceId : this.newsSourceId).subscribe(
       news => {
         if (news && news.articles) {
           this.articles = news.articles;
+          this.isLoading = false;
         }
       }
     );
