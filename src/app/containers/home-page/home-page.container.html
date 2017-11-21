@@ -9,7 +9,7 @@
     <app-search (loadNewsData) ="loadNewsData($event)"></app-search>
   </div>
 
-  <div *ngFor="let article of articles" class="col-sm-6">
+  <div *ngFor="let article of articles" class="col-sm-12">
     <app-article [article] ="article"></app-article>
   </div>
 

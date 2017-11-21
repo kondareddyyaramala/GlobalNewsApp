@@ -1,18 +1,21 @@
 @import '../../common/styles/colors.scss';
 @import '../../common/styles/fonts.scss';
 .search {
-  display: inline-flex;
+  display: flex;
+  font-family: $ff-avant-garde-bold;
   margin-top: 20px;
   margin-bottom: 20px;
+  div{
+    flex-wrap: wrap ;
+  }
   .select-country-text {
     margin-right: 10px;
     font-family: $ff-avant-garde-bold;
   }
   div {
     margin-left: 5px;
-    display: flex;
     justify-content: center;
-    flex-direction: column;
+    vertical-align: middle;
   }
   .search-button {
     button {

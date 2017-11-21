@@ -1,23 +1,33 @@
 @import '../../common/styles/colors.scss';
 @import '../../common/styles/fonts.scss';
-
 .article {
   margin-top: 15px;
   margin-bottom: 15px;
   align-content: center;
   justify-content: center;
- .title {
-   font-family: $ff-avant-garde-bold;
- }
- .author{
-  font-family: $ff-avant-garde-italic;
- }
- .description {
-   font-family: $ff-avant-garde-regular;
- }
- .click-to-read {
-   margin-left: 10px;
-   font-family: $ff-avant-garde-italic;
- }
-
+  opacity: 0;
+  animation: fade-in-right ease 0.8s forwards;
+  .title {
+    font-family: $ff-avant-garde-bold;
+  }
+  .author {
+    font-family: $ff-avant-garde-italic;
+  }
+  .description {
+    font-family: $ff-avant-garde-regular;
+  }
+  .click-to-read {
+    margin-left: 10px;
+    font-family: $ff-avant-garde-italic;
+  }
+  @keyframes fade-in-right {
+    from {
+      opacity: 0;
+      transform: translateX(-150px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
 }

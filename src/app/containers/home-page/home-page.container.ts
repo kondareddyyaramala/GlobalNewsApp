@@ -9,7 +9,6 @@ import { Article } from '../../models';
   styleUrls: ['./home-page.container.scss']
 })
 export class HomePageContainer {
-  public newsSourceId: string = 'the-hindu';
   public articles: Array<Article> = [];
   public isLoading: boolean = false;
   public loadingMessage: string = 'Loading...';
@@ -20,19 +19,22 @@ export class HomePageContainer {
     this.loadData();
   }
 
-  loadData(newsSourceId?){
+  loadData(newsSourceId?) {
     this.isLoading = true;
-    this.newsService.getNewsData(newsSourceId ? newsSourceId : this.newsSourceId).subscribe(
+    this.newsService.getNewsData(newsSourceId).subscribe(
       news => {
         if (news && news.articles) {
           this.articles = news.articles;
           this.isLoading = false;
         }
+      },
+      error => {
+        this.isLoading = false;
       }
     );
   }
 
-  loadNewsData(newsSourceId: string){
+  loadNewsData(newsSourceId: string) {
     this.loadData(newsSourceId);
   }
 }

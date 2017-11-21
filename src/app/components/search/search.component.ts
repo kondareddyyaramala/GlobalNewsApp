@@ -16,6 +16,8 @@ export class SearchComponent implements OnInit {
 
   ngOnInit() {
     this.newsSources = NEWS_SOURCES;
+    this.selectedNewsSource = NEWS_SOURCES[0];
+    this.loadData();
   }
 
   loadData(){
