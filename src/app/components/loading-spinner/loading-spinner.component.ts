@@ -8,5 +8,4 @@ import { Component, OnInit , Input} from '@angular/core';
 export class LoadingSpinnerComponent {
   @Input() isLoading: boolean;
   @Input() loadingMessage: string = null;
-
 }
