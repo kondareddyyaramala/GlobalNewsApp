@@ -19,6 +19,7 @@ export class HomePageContainer {
     this.loadData();
   }
 
+  // Load news data
   loadData(newsSourceId?) {
     this.isLoading = true;
     this.newsService.getNewsData(newsSourceId).subscribe(
