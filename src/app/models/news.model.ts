@@ -1,13 +1,12 @@
 import { Article } from './article.model';
+import constructObject from 'app/common/utils';
 
 export class News {
   status: string;
   articles: Array<Article>;
 
   constructor(config){
-    config = config || {};
-    this.status = config.status;
-    this.articles = config.articles;
+    constructObject(config, this);
   }
 
 }

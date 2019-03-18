@@ -1,10 +1,14 @@
+import constructObject from "app/common/utils";
+
 export class Source {
   name: string;
   id: string;
+  url: string;
+  category: string;
+  language: string;
+  country: string;
 
   constructor(config){
-    config = config || {};
-    this.name = config.name;
-    this.id = config.id;
+    constructObject(config, this);
   }
 }

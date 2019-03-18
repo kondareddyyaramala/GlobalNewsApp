@@ -1,5 +1,4 @@
-import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { NEWS_SOURCES } from '../../common/news-sources';
+import { Component, OnChanges, EventEmitter, Output, Input } from '@angular/core';
 import { Source } from '../../models';
 
 @Component({
@@ -7,17 +6,17 @@ import { Source } from '../../models';
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.scss']
 })
-export class SearchComponent implements OnInit {
+export class SearchComponent implements OnChanges {
+  @Input() newsSources: Array<Source> = [];
   @Output() loadNewsData: EventEmitter<string> =  new EventEmitter<string>();
   public selectedNewsSource: Source;
-  public newsSources: Array<Source>;
 
   constructor() { }
 
-  ngOnInit() {
-    this.newsSources = NEWS_SOURCES;
-    this.selectedNewsSource = NEWS_SOURCES[0];
-    this.loadData();
+  ngOnChanges(changes) {
+    if(changes && changes.newsSources){
+      this.selectedNewsSource = this.newsSources[0];
+    }
   }
 
   loadData(){

@@ -1,4 +1,5 @@
 import { Source } from "./source.model";
+import constructObject from "app/common/utils";
 
 
 export class Article {
@@ -11,13 +12,6 @@ export class Article {
   publishedAt: string;
 
   constructor(config){
-    config = config || {};
-    this.source = config.source;
-    this.author = config.author;
-    this.title = config.title;
-    this.description = config.description;
-    this.url = config.url;
-    this.urlToImage = config.urlToImage;
-    this.publishedAt = config.publishedAt;
+    constructObject(config, this);
   }
 }

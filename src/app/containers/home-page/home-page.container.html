@@ -6,7 +6,11 @@
     </app-loading-spinner>
   </div>
   <div>
-    <app-search (loadNewsData) ="loadNewsData($event)"></app-search>
+    <app-search 
+      [newsSources]="sources"
+      (loadNewsData) ="loadNewsData($event)"
+    >
+    </app-search>
   </div>
 
   <div *ngFor="let article of articles" class="col-sm-12">
