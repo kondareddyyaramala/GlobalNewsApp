@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from '../../services/news.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { Article, Source } from '../../models';
 
 @Component({
@@ -14,25 +14,27 @@ export class HomePageContainer {
   public isLoading: boolean = false;
   public loadingMessage: string = 'Loading...';
 
+  private subscriptions: Subscription[];
+
   constructor(private newsService: NewsService) { }
 
   ngOnInit() {
     this.loadNewsSources();
   }
 
-  loadNewsSources(){
+  loadNewsSources() {
     this.isLoading = true;
-    this.newsService.getNewsSources().subscribe(resp => { 
+    this.subscriptions.push(this.newsService.getNewsSources().subscribe(resp => {
       this.sources = resp
       // load the news for the first source
       this.loadData(this.sources[0].id);
-    });
+    }));
   }
 
   // Load news data
   loadData(newsSourceId?) {
     this.isLoading = true;
-    this.newsService.getNewsData(newsSourceId).subscribe(
+    this.subscriptions.push(this.newsService.getNewsData(newsSourceId).subscribe(
       news => {
         if (news && news.articles) {
           this.articles = news.articles;
@@ -42,10 +44,14 @@ export class HomePageContainer {
       error => {
         this.isLoading = false;
       }
-    );
+    ));
   }
 
   loadNewsData(newsSourceId: string) {
     this.loadData(newsSourceId);
+  }
+
+  ngOnDestroy(){
+    this.subscriptions.forEach(s => s && s.unsubscribe());
   }
 }
