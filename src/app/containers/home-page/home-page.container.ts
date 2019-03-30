@@ -14,7 +14,7 @@ export class HomePageContainer {
   public isLoading: boolean = false;
   public loadingMessage: string = 'Loading...';
 
-  private subscriptions: Subscription[];
+  private subscriptions: Subscription[] = [];
 
   constructor(private newsService: NewsService) { }
 
