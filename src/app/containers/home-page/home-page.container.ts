@@ -12,7 +12,7 @@ export class HomePageContainer {
   public articles: Array<Article> = [];
   public sources: Array<Source> = [];
   public isLoading: boolean = false;
-  public loadingMessage: string = 'Loading...';
+  public loadingMessage: string = 'Loading....';
 
   private subscriptions: Subscription[] = [];
 
