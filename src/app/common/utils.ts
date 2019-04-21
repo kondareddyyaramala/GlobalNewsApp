@@ -6,4 +6,14 @@ const constructObject = (config, ref) => {
 }
 
 
+const func = x => y => x * y;
+
+// Factorial function
+const factorial = (num, accum = 1) => {
+   if(num < 2){
+    return accum;
+   }
+   return factorial(num -1 , num * accum );
+}
+
 export default constructObject;
