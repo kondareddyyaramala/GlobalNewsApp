@@ -3,20 +3,12 @@
 .search {
   display: flex;
   font-family: $ff-avant-garde-bold;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  div{
-    flex-wrap: wrap ;
-  }
-  .select-country-text {
-    margin-right: 10px;
-    font-family: $ff-avant-garde-bold;
-  }
-  div {
-    margin-left: 5px;
-    justify-content: center;
-    vertical-align: middle;
-  }
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  box-sizing: border-box;
+  padding-top: 5px;
+ 
   .search-button {
     button {
       background-color: $moss;
