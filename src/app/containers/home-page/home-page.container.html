@@ -1,20 +1,20 @@
 <div class="home-page container">
-  <div>
+  <section>
     <app-loading-spinner 
       [isLoading]="isLoading" 
       [loadingMessage]="loadingMessage">
     </app-loading-spinner>
-  </div>
-  <div>
+  </section>
+  <section>
     <app-search 
       [newsSources]="sources"
       (loadNewsData) ="loadNewsData($event)"
     >
     </app-search>
-  </div>
+  </section>
 
-  <div *ngFor="let article of articles" class="col-sm-12">
+  <section *ngFor="let article of articles" class="col-sm-12">
     <app-article [article] ="article"></app-article>
-  </div>
+  </section>
 
 </div>

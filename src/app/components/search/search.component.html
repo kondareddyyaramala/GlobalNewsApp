@@ -1,5 +1,5 @@
-<div class="search">
-  <div class="select-country-text">Select News Source: </div>
+<section class="search">
+  <label class="select-country-text">Select News Source: </label>
   <div class="input-field">
     <mat-form-field>
       <mat-select placeholder="News Source" [(ngModel)]="selectedNewsSource" name="newsSources">
@@ -12,4 +12,4 @@
   <div class="search-button">
     <button mat-button [disabled]="!selectedNewsSource" (click)="loadData()">Search</button>
   </div>
-</div>
+</section>
